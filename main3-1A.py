@@ -39,10 +39,10 @@ MODEL_PRICES = {
 
 def init_page():
     st.set_page_config(
-        page_title="My Great ChatGPT",
+        page_title="Chatbot by Yas",
         page_icon="🤗"
     )
-    st.header("My Great ChatGPT 🤗")
+    st.header("Chatbot by Yas🤗")
     st.sidebar.title("Options")
 
 
@@ -61,8 +61,7 @@ def select_model():
     temperature = st.sidebar.slider(
         "Temperature:", min_value=0.0, max_value=2.0, value=0.0, step=0.01)
 
-    models = ("GPT-3.5", "GPT-4o", "Claude 3.5 Sonnet", "Gemini 1.5 Pro",
-              "command-r-plus","mistral","llama3.1","aya","ELYZA-JP:8b")
+    models = ("GPT-3.5", "GPT-4o", "Claude 3.5 Sonnet", "Gemini 1.5 Pro")
     model = st.sidebar.radio("Choose a model:", models)
     if model == "GPT-3.5":
         st.session_state.model_name = "gpt-3.5-turbo"
