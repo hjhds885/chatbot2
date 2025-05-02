@@ -7,7 +7,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_openai import ChatOpenAI
 from langchain_anthropic import ChatAnthropic
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_cohere.chat_models import ChatCohere
+#from langchain_cohere.chat_models import ChatCohere
 from langchain_community.llms import Ollama
 
 
@@ -17,7 +17,7 @@ MODEL_PRICES = {
         "gpt-4o": 2.5 / 1_000_000,
         "claude-3-5-sonnet-20240620": 3 / 1_000_000,
         "gemini-1.5-pro-latest": 3.5 / 1_000_000,
-        "command-r-plus":0,
+        #"command-r-plus":0,
         "mistral":0,
         "llama3.1":0,
         "aya":0,
@@ -91,13 +91,13 @@ def select_model():
             api_key= st.secrets.KEY.GOOGLE_API_KEY,
             model=st.session_state.model_name
         )
-    elif model == "command-r-plus":
-        st.session_state.model_name = "command-r-plus"
-        return ChatCohere(
-            temperature=temperature,
-            api_key= st.secrets.KEY.COHERE_API_KEY,
-            model=st.session_state.model_name
-        )
+    #elif model == "command-r-plus":
+        #st.session_state.model_name = "command-r-plus"
+        #return ChatCohere(
+            #temperature=temperature,
+            #api_key= st.secrets.KEY.COHERE_API_KEY,
+            #model=st.session_state.model_name
+        #)
     elif model == "mistral":
         st.session_state.model_name = "mistral"
         return Ollama(
